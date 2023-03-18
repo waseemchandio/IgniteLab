@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-class ToDoRepository (application: Application) {
+class TodoRepository (application: Application) {
 
     private val todoDao: UserDao
     private val allTodos: LiveData<List<TodoRecord>>
