@@ -8,4 +8,17 @@
     <string name="home">Home</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pleaseEnterTitle">please enter title</string>
+    <string name="pleaseEnterContent">please enter content</string>
+
+    <string name="delete">delete</string>
+    <string name="save">Save</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="enter_content">Enter Content</string>
+    <string name="viewOrEditTodo">View/Edit Todo</string>
+    <string name="createTodo">Create Todo</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="search">Search</string>
+    <string name="search_here">Search here</string>
 </resources>
