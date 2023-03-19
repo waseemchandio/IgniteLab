@@ -12,6 +12,7 @@ import com.example.ignetilabtest.database.TodoRecord
 import com.example.ignetilabtest.database.UserDao
 import com.example.ignetilabtest.databinding.FragmentHomeBinding
 import com.example.ignetilabtest.models.TodoViewModel
+import com.example.ignetilabtest.utils.ProgressHelper
 
 
 class HomeFragment : Fragment() {
@@ -38,13 +39,10 @@ class HomeFragment : Fragment() {
 
     private fun saveTodo() {
         if (validateFields()) {
-
             val id = if (todoRecord != null) todoRecord?.id else null
             val todoViewModel  = TodoViewModel(requireContext().applicationContext)
             val todo = TodoRecord(id = id, title = binding.etTodoTitle.text.toString(), content = binding.etTodoContent.text.toString())
             todoViewModel.saveTodo(todo)
-
-
         }
     }
 
