@@ -9,9 +9,20 @@ import com.example.ignetilabtest.R
 import com.example.ignetilabtest.databinding.ActivitySignUpActiviityBinding
 import com.example.ignetilabtest.login.LoginActivity
 import com.example.ignetilabtest.utils.AppSettings
+import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var binding: ActivitySignUpActiviityBinding
+    val EMAIL_ADDRESS_PATTERN = Pattern.compile(
+        "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                "\\@" +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                "(" +
+                "\\." +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                ")+"
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpActiviityBinding.inflate(layoutInflater)
@@ -29,8 +40,12 @@ class SignUpActivity : AppCompatActivity() {
                 binding.edtName.setError("please enter name")
             } else if (phone.isEmpty()) {
                 binding.edtPhone.setError("please enter phone number")
+            } else if (phone.length < 11 || phone.length > 11 || !phone.startsWith("03")) {
+                binding.edtPhone.setError("please enter valid phone number and must start with 03")
             } else if (email.isEmpty()) {
                 binding.edtEmail.setError("please enter email")
+            } else if (!isValidString(email)) {
+                binding.edtEmail.setError("please enter correct email")
             } else if (password.isEmpty()) {
                 binding.edtPassword.setError("please enter password")
             } else {
@@ -50,4 +65,8 @@ class SignUpActivity : AppCompatActivity() {
 
 
     }//class
+
+    fun isValidString(str: String): Boolean {
+        return EMAIL_ADDRESS_PATTERN.matcher(str).matches()
+    }
 }
