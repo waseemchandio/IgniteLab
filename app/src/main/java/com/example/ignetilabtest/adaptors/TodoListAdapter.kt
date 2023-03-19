@@ -24,7 +24,13 @@ class TodoListAdapter (var context: Context, val list: List<TodoRecord>) :
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         holder.binding.tvItemTitle.setText(""+list[position].title)
-        holder.binding.tvItemTitle.setText(""+list[position].content)
+        holder.binding.tvItemContent.setText(""+list[position].content)
+
+
+        holder.binding.ivItemDelete.setOnClickListener {
+
+
+        }
     }
 
     override fun getItemCount(): Int {

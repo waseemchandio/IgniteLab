@@ -5,9 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.ignetilabtest.databinding.ActivityMainBinding
-import com.example.ignetilabtest.fragments.favFragment.FavouriteFragment
+import com.example.ignetilabtest.fragments.favFragment.TodoListFragment
 import com.example.ignetilabtest.fragments.homeFragment.HomeFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.menuFav -> {
                     // Respond to navigation item 2 click
-                    var fragment = FavouriteFragment()
+                    var fragment = TodoListFragment()
                     loadFragment(fragment)
                     true
                 }
