@@ -27,15 +27,15 @@ class SplashScreen : AppCompatActivity() {
 
         // Handler().postDelayed({
         Handler(Looper.getMainLooper()).postDelayed({
-        //    if (AppSettings.sharedInstance(this)!!.getBoolean(AppSettings.IS_LOGIIN)){
+            if (AppSettings.sharedInstance(this)!!.getBoolean(AppSettings.IS_LOGIIN)){
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
-//            }else{
-//                val intent = Intent(this, LoginActivity::class.java)
-//                startActivity(intent)
-//                finish()
-//            }
+            }else{
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
 
         }, 3000) // 3000 is the delayed time in mill
 

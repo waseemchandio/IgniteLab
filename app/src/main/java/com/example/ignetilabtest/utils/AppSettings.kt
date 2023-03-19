@@ -63,6 +63,10 @@ class AppSettings(mcontext: Context?) {
         private val mutex = Any()
 
         const val IS_LOGIIN = "IS_LOGIN"
+        const val PHONE_NUMBER = "PHONE_NUMBER"
+        const val PASSWORD = "PHONE_NUMBER"
+        const val USERNAME = "USERNAME"
+        const val USEREMAIL = "USEREMAIL"
 
         fun sharedInstance(context: Context?): AppSettings? {
             if (sharedSettings == null) synchronized(mutex) {

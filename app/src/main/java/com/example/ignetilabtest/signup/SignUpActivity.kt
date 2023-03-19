@@ -14,6 +14,14 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(view)
 
 
+        binding.signUpButton.setOnClickListener {
+            var name = binding.edtName.text.toString()
+            var phone = binding.edtPhone.text.toString()
+            var email = binding.edtEmail.text.toString()
+            var password = binding.edtPassword.text.toString()
+
+        }
+
 
 
     }//class
