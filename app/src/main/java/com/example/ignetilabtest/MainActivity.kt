@@ -1,5 +1,6 @@
 package com.example.ignetilabtest
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment
 import com.example.ignetilabtest.databinding.ActivityMainBinding
 import com.example.ignetilabtest.fragments.favFragment.TodoListFragment
 import com.example.ignetilabtest.fragments.homeFragment.HomeFragment
+import com.example.ignetilabtest.login.LoginActivity
+import com.example.ignetilabtest.utils.AppSettings
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -35,6 +38,11 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(fragment)
                     true
                 }
+                R.id.menuLogOut -> {
+                    // Respond to navigation item 3 click
+                    logOut()
+                    true
+                }
                 else -> {
                     false
                 }
@@ -43,6 +51,32 @@ class MainActivity : AppCompatActivity() {
 
 
     }//class
+
+    private fun logOut() {
+        val dialogBuilder = AlertDialog.Builder(this)
+        // set message of alert dialog
+        dialogBuilder.setMessage("Do you want to logout?")
+            // if the dialog is cancelable
+            .setCancelable(false)
+            // positive button text and action
+            .setPositiveButton("ok") { _, _ ->
+                AppSettings.sharedInstance(this)?.saveBoolean(AppSettings.IS_LOGIN, false)
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            // negative button text and action
+            .setNegativeButton("Cancel") { dialog, _ ->
+                dialog.cancel()
+            }
+        // create dialog box
+        val alert = dialogBuilder.create()
+        // set title for alert dialog box
+        alert.setTitle("Igneti")
+        // show alert dialog
+        alert.show()
+
+    }
 
     override fun onBackPressed() {
         closeApp();
@@ -78,4 +112,5 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.mainContainer, fragment)
         transaction.commit()
     }
+
 }

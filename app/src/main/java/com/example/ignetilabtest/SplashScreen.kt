@@ -27,11 +27,11 @@ class SplashScreen : AppCompatActivity() {
 
         // Handler().postDelayed({
         Handler(Looper.getMainLooper()).postDelayed({
-            if (AppSettings.sharedInstance(this)!!.getBoolean(AppSettings.IS_LOGIN)){
+            if (AppSettings.sharedInstance(this)!!.getBoolean(AppSettings.IS_LOGIN)) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
-            }else{
+            } else {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()

@@ -10,4 +10,10 @@
         android:enabled="true"
         android:icon="@drawable/ic_baseline_favorite_24"
         android:title="@string/todo"/>
+
+    <item
+        android:id="@+id/menuLogOut"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_power_settings_new_24"
+        android:title="@string/logout"/>
 </menu>
