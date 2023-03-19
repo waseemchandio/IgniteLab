@@ -22,11 +22,20 @@
             android:contentDescription="@string/delete"
             android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
+        <CheckBox
+            android:id="@+id/iv_item_Checked"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/iv_item_delete"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:contentDescription="checkBox" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/iv_item_delete"
             android:layout_toStartOf="@id/iv_item_delete"
+            android:layout_toLeftOf="@id/iv_item_delete"
             android:orientation="vertical">
 
             <TextView

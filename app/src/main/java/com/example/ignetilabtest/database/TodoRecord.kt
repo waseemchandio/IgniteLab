@@ -7,4 +7,5 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "todo")
 data class TodoRecord (@PrimaryKey(autoGenerate = true) val id: Long?,
                        @ColumnInfo(name = "title") val title: String,
-                       @ColumnInfo(name = "content") val content: String)
+                       @ColumnInfo(name = "content") val content: String,
+                       @ColumnInfo(name = "status") val status: Boolean,)

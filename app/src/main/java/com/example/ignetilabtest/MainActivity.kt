@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.ignetilabtest.databinding.ActivityMainBinding
-import com.example.ignetilabtest.fragments.favFragment.TodoListFragment
+import com.example.ignetilabtest.fragments.todoFragment.TodoListFragment
 import com.example.ignetilabtest.fragments.homeFragment.HomeFragment
 import com.example.ignetilabtest.login.LoginActivity
 import com.example.ignetilabtest.utils.AppSettings

@@ -1,4 +1,4 @@
-package com.example.ignetilabtest.fragments.favFragment
+package com.example.ignetilabtest.fragments.todoFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ignetilabtest.R
 import com.example.ignetilabtest.adaptors.TodoListAdapter
-import com.example.ignetilabtest.database.TodoRecord
 import com.example.ignetilabtest.databinding.FragmentFavouriteBinding
-import com.example.ignetilabtest.databinding.FragmentHomeBinding
 import com.example.ignetilabtest.models.TodoViewModel
 
 class TodoListFragment : Fragment() {
@@ -31,7 +28,6 @@ class TodoListFragment : Fragment() {
     }
 
     private fun initView() {
-
         recyViewTodoLayoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.rvTodoList.layoutManager = recyViewTodoLayoutManager
