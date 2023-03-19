@@ -21,4 +21,5 @@
     <string name="content">Content</string>
     <string name="search">Search</string>
     <string name="search_here">Search here</string>
+    <string name="todo">Todo</string>
 </resources>
