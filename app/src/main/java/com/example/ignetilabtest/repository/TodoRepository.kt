@@ -1,6 +1,7 @@
 package com.example.ignetilabtest.repository
 
 import android.app.Application
+import android.content.Context
 import androidx.lifecycle.LiveData
 import com.example.ignetilabtest.database.AppDatabase
 import com.example.ignetilabtest.database.TodoRecord
@@ -9,13 +10,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-class TodoRepository (application: Application) {
+class TodoRepository (context: Context) {
 
     private val todoDao: UserDao
     private val allTodos: LiveData<List<TodoRecord>>
 
     init {
-        val database = AppDatabase.getInstance(application.applicationContext)
+        val database = AppDatabase.getInstance(context)
         todoDao = database!!.userDao()
         allTodos = todoDao.getAllTodoList()
     }
