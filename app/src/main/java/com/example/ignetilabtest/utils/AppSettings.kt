@@ -62,9 +62,9 @@ class AppSettings(mcontext: Context?) {
         private var sharedSettings: AppSettings? = null
         private val mutex = Any()
 
-        const val IS_LOGIIN = "IS_LOGIN"
+        const val IS_LOGIN = "IS_LOGIN"
         const val PHONE_NUMBER = "PHONE_NUMBER"
-        const val PASSWORD = "PHONE_NUMBER"
+        const val PASSWORD = "PASSWORD"
         const val USERNAME = "USERNAME"
         const val USEREMAIL = "USEREMAIL"
 

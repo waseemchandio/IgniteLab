@@ -36,9 +36,11 @@ class LoginActivity : AppCompatActivity() {
             } else if (password.isEmpty()) {
                 binding.edtPassword.setError("please enter password")
             } else if (phone.equals(prefNumber) && password.equals(prefPassword)) {
+                AppSettings.sharedInstance(this)!!.saveBoolean(AppSettings.IS_LOGIN, true)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
+                Toast.makeText(this, "login successfull", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "credentials error", Toast.LENGTH_SHORT).show()
             }
