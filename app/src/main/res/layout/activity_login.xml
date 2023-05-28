@@ -20,23 +20,35 @@
                 android:id="@+id/txtLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LOGIN"
-                android:textSize="25dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:textStyle="bold"
-                android:textColor="@color/black">
+                android:text="LOGIN"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold">
 
             </TextView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_below="@+id/txtLogin"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_below="@+id/txtLogin"
                 android:padding="30dp">
 
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:drawableLeft="app">
+
+                    </RadioButton>
+
+                </RadioGroup>
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -104,7 +116,6 @@
                     </TextView>
 
                 </LinearLayout>
-
 
 
             </LinearLayout>
